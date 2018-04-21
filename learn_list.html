@@ -1,22 +1,61 @@
-<dl class="dl-horizontal">
-  <dt class="programList">
-    <a class="btn btn-xs btn-default showList" name="button">+</a>
-    <a class="btn btn-xs btn-default hideList" name="button">-</a>
-    编程学习
-  </dt>
-  <dd class="listChild"><a href="https://github.com/BrightestStar/LearnMachine-program/tree/master/01%20database_l">数据库学习</a></dd>
-  <dd class="listChild">文章</dd>
-  <dd class="listChild">文章</dd>
-  <dd class="listChild">文章</dd>
-  <dd class="listChild">文章</dd>
-</dl>
-<br><br>
-<dl class="dl-horizontal">
-  <dt class="ecoList">
-    <a class="btn btn-xs btn-default showList" name="button">+</a>
-    <a class="btn btn-xs btn-default hideList" name="button">-</a>
-    经济学习
-  </dt>
-  <dd class="listChild"><a href="https://github.com/BrightestStar/LearnMachine-program/tree/master/01%20database_l">宏观经济学</a></dd>
-  <dd class="listChild">文章</dd>
-</dl>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" />
+  <title>GuoBa的博客</title>
+  <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <dl class="dl-horizontal">
+    <dt class="programList">
+        <a class="btn btn-xs btn-default showList" name="button">+</a>
+        <a class="btn btn-xs btn-default hideList" name="button">-</a>
+        编程学习
+      </dt>
+    <dd class="listChild"><a href="https://github.com/BrightestStar/LearnMachine-program/tree/master/01%20database_l">数据库学习</a></dd>
+    <dd class="listChild">文章</dd>
+    <dd class="listChild">文章</dd>
+    <dd class="listChild">文章</dd>
+    <dd class="listChild">文章</dd>
+  </dl>
+  <br><br>
+  <dl class="dl-horizontal">
+    <dt class="ecoList">
+        <a class="btn btn-xs btn-default showList" name="button">+</a>
+        <a class="btn btn-xs btn-default hideList" name="button">-</a>
+        经济学习
+      </dt>
+    <dd class="listChild"><a href="https://github.com/BrightestStar/LearnMachine-program/tree/master/01%20database_l">宏观经济学</a></dd>
+    <dd class="listChild">文章</dd>
+  </dl>
+  <script>
+    // 显示清单
+    $(document).ready(function() {
+      $('.listChild').hide();
+      $('.hideList').hide();
+      $('.showList').on('click', function() {
+        var thisDl = $(this).parent().parent()
+        thisDl.find('.listChild').each(function(index) {
+          $(this).show();
+        })
+        $(this).parent().find('.hideList').show()
+        $(this).hide()
+
+      });
+      $('.hideList').on('click', function() {
+        var thisDl = $(this).parent().parent()
+        thisDl.find('.listChild').each(function(index) {
+          $(this).hide();
+        })
+        $(this).parent().find('.showList').show()
+        $(this).hide()
+      });
+    })
+  </script>
+</body>
+
+</html>

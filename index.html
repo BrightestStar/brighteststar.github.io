@@ -38,31 +38,10 @@
       $('.homePage').show();
       $('.navbar-brand').on('click', function() {
         var class_name = $(this).attr('class').replace('navbar-brand ', '.')
-        console.log(class_name)
 
         $('div').hide();
         $(class_name).show();
       })
-      // 显示清单
-      $('.listChild').hide();
-      $('.hideList').hide();
-      $('.showList').on('click', function() {
-        var thisDl = $(this).parent().parent()
-        thisDl.find('.listChild').each(function(index) {
-          $(this).show();
-        })
-        $(this).parent().find('.hideList').show()
-        $(this).hide()
-
-      });
-      $('.hideList').on('click', function() {
-        var thisDl = $(this).parent().parent()
-        thisDl.find('.listChild').each(function(index) {
-          $(this).hide();
-        })
-        $(this).parent().find('.showList').show()
-        $(this).hide()
-      });
     })
   </script>
 </body>
